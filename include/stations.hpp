@@ -1,7 +1,7 @@
 #ifndef STATIONS_HPP
 #define STATIONS_HPP
 
-#include <DDBot.h>
+#include "line_following.hpp"
 
 enum class Station {
     NONE,

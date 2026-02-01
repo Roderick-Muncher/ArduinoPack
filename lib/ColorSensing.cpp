@@ -165,9 +165,6 @@ bool ColorSensor::isCalibrated() const {
   return _calibrated;
 }
 
-
-
-
 /**
  * @brief Primary method: determine what color the sensor is looking at
  * @param c The RGB readings from the sensor (values from 0.0 to 1.0)
@@ -208,8 +205,6 @@ ColorName ColorSensor::classify(const ColorRGB& c) const {
   // If none of the above match, we don't know what color it is
   return ColorName::UNKNOWN;
 }
-
-
 
 /**
  * @brief Convert a color to text you can print
