@@ -1,3 +1,5 @@
+#include <TCS3200.h>
+
 // Drivetrain motor pins
 namespace drive {
 uint8_t directionPins[4] = {4, 5, 2, 3};
@@ -9,4 +11,7 @@ namespace colour {
 const uint8_t S2 = A5;
 const uint8_t S3 = 7;
 const uint8_t OUT = 8;
+
+const HSVColor white_min = {0, 0, 200};
+const HSVColor white_max = {360, 100, 100};
 }
