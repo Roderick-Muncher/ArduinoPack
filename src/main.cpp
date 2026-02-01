@@ -1,8 +1,10 @@
 #include <Arduino.h>
 #include <DDBot.h>
 #include "constants.hpp"
+#include "stations.hpp"
 
 DDBot drivetrain(dt::directionPins, dt::speedPins);
+Station currentStation = Station::STATION_A;
 
 void setup() {
   // put your setup code here, to run once:
@@ -13,15 +15,17 @@ void setup() {
   
   drivetrain.setPinModes();
   delay(3000);
+
+  switch (currentStation) {
+    case Station::STATION_A:
+      Serial.println("Running Station A");
+      runStationA(drivetrain);
+      break;
+    default:
+      Serial.println("No station selected or station not implemented.");
+      break;
+  }
 }
 
 void loop() {
-  drivetrain.forward(255);
-  delay(6000);
-  drivetrain.stop();
-  delay(100);
-  drivetrain.right(255);
-  delay(2000);
-  drivetrain.stop();
-  delay(10000);
 }
