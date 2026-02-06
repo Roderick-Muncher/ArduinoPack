@@ -12,7 +12,7 @@ struct Chassis {
    * @param sensor Reference to the ColorSensor instance
    */
   Chassis(DDBot& drivetrain, ColorSensor& sensor)
-      : drivetrain(drivetrain), colorSensor(sensor) {}
+      : drivetrain_(drivetrain), colorSensor_(sensor) {}
 
   /**
    * @brief Read the current color detected by the color sensor
@@ -34,8 +34,8 @@ struct Chassis {
                   std::pair<int, int> speeds = {100, 150},
                   bool reverse = false);
 
-  DDBot& drivetrain;
-  ColorSensor& colorSensor;
+  DDBot& drivetrain_;
+  ColorSensor& colorSensor_;
 };
 
 #endif  // CHASSIS_HPP

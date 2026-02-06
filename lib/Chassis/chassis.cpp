@@ -1,8 +1,8 @@
 #include "chassis.hpp"
 
 ColorName Chassis::readColor() {
-  ColorRGB colorReading = colorSensor.readNormalized();
-  return colorSensor.classify(colorReading);
+  ColorRGB colorReading = colorSensor_.readNormalized();
+  return colorSensor_.classify(colorReading);
 }
 
 void Chassis::followLine(ColorName lineColor, bool followLeft,
@@ -16,15 +16,15 @@ void Chassis::followLine(ColorName lineColor, bool followLeft,
   // Reversing uses backward instead and flips motor order
   if (reverse) {
     if (followLeft == onLine) {
-      drivetrain.backward(outSpeed, inSpeed);
+      drivetrain_.backward(outSpeed, inSpeed);
     } else {
-      drivetrain.backward(inSpeed, outSpeed);
+      drivetrain_.backward(inSpeed, outSpeed);
     }
   } else {
     if (followLeft == onLine) {
-      drivetrain.forward(inSpeed, outSpeed);
+      drivetrain_.forward(inSpeed, outSpeed);
     } else {
-      drivetrain.forward(outSpeed, inSpeed);
+      drivetrain_.forward(outSpeed, inSpeed);
     }
   }
 }
