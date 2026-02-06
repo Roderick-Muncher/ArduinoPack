@@ -1,4 +1,5 @@
 #include <Arduino.h>
+
 #include "devices.hpp"
 #include "stations.hpp"
 
@@ -6,14 +7,15 @@ Station currentStation = Station::STATION_A;
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
-  while (!Serial && millis() < 2000) {}
-  
+  Serial.begin(115200);
+  while (!Serial && millis() < 2000) {
+  }
+
   Serial.println("Initializing…");
   drivetrain.setPinModes();
   chassis.stop();
   arm.raise();
-  delay(3000);
+  delay(2000);
   Serial.println("Initialization complete");
 
   switch (currentStation) {
@@ -35,5 +37,4 @@ void setup() {
   }
 }
 
-void loop() {
-}
+void loop() {}
