@@ -8,13 +8,16 @@
 #include <queue>
 
 class Chassis {
+
  public:
+
   /**
    * @brief Construct a new Chassis object
    * @param drivetrain Reference to the DDBot drivetrain instance
    * @param sensor Reference to the ColourSensor instance
    * @param ultrasonic Reference to the NewPing ultrasonic sensor instance
    */
+
   Chassis(DDBot& drivetrain, ColourSensor& sensor, NewPing& ultrasonic)
       : drivetrain_(drivetrain),
         colourSensor_(sensor),
@@ -25,27 +28,30 @@ class Chassis {
    * @param leftSpeed Speed for the left motor (-255 to 255)
    * @param rightSpeed Speed for the right motor (-255 to 255)
    * @param time Duration to move in milliseconds
-   * @param stopAfter If true, stop the robot after moving for the specified
-   * time
+   * @param stopAfter If true, stop the robot after moving for the specified time
    */
+
   void moveTank(int leftSpeed, int rightSpeed, int time = 0,
                 bool stopAfter = true);
 
   /**
    * @brief Stop all movement of the robot
    */
+
   void stop() { drivetrain_.stop(); }
 
   /**
    * @brief Read the current colour detected by the colour sensor
    * @return Detected ColourName enum
    */
+
   ColourName readColour();
 
   /**
    * @brief Read the current distance measured by the ultrasonic sensor
    * @return Distance in centimeters
    */
+
   int readDistance();
 
   /**
@@ -58,6 +64,7 @@ class Chassis {
    * @param reverse If true, move backwards while following the line
    * @note This method must be called repeatedly with a delay in between
    */
+  
   void followLine(ColourName lineColour, bool followLeft,
                   std::pair<int, int> speeds = {170, 255},
                   bool reverse = false);

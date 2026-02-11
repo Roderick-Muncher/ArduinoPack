@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "devices.hpp"
+#include "devices.hpp" // You may name your parts in here, but we have named them for you
 
 void setup() {
   Serial.begin(115200);
@@ -10,15 +10,12 @@ void setup() {
   chassis.stop();
   Serial.println("Initialization complete");
 
-  // Put your code in here:
+  // Put your code below:
 
 
+  chassis.moveTank(255, 255, 1000);
 
 
-
-
-
-  
 
 
   //
