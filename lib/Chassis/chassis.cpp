@@ -36,10 +36,13 @@ void Chassis::moveTank(int leftSpeed, int rightSpeed, int time,
 ColourName Chassis::readColour() {
   // Get readings
   ColourRGB colourReading = colourSensor_.readNormalized();
+
   ColourName colourName = colourSensor_.classify(colourReading);
 
   // Push to queue
   bufferedColour = colourName;
+
+  Serial.println((int)bufferedColour);
 
   return colourName;
 }

@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "devices.hpp" // You may name your parts in here, but we have named them for you
+#include "constants.hpp"
 
 void setup() {
   Serial.begin(115200);
@@ -12,11 +13,7 @@ void setup() {
 
   // Put your code below:
 
-
-  chassis.moveTank(255, 255, 1000);
-
-
-
+  chassis.moveTank(255,255,1000);
 
   //
 
@@ -24,4 +21,7 @@ void setup() {
 
 }
 
-void loop() {}
+void loop() {
+  Serial.println(pulseIn(color::OUT_PIN, LOW));
+  delay(1000);
+}
