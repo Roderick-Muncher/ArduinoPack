@@ -1,4 +1,4 @@
-# [Arduino Package (Designapalooza 2T6)] - Hi-Skule™
+# Arduino Package (Designapalooza 2T6) - Hi-Skule™
 
 A modular robot control system built with Arduino framework.
 
